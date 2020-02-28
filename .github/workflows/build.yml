@@ -1,0 +1,35 @@
+name: publish
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+        registry-url: 'https://registry.npmjs.org'
+    
+    - name: Prepare
+      run: |
+        npm install yarn -g
+        npm install typescript -g
+
+    - name: Install
+      run: |
+        yarn install
+
+    - name: Build
+      run: |
+        yarn build
+  
+    - name: Publish to NPM
+      run: |
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

@@ -1,0 +1,32 @@
+{
+  "name": "use-scroll-display",
+  "version": "1.0.2",
+  "description": "Slim React Hook for showing elements on scroll as they enter the viewport",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "node ./scripts/installPeerDeps.js",
+    "postbuild": "cp ./src/style.css ./dist/style.css && rm -rf node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silind/use-scroll-display.git"
+  },
+  "keywords": ["react", "hooks"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Silind/use-scroll-display/issues"
+  },
+  "homepage": "https://github.com/Silind/use-scroll-display#readme",
+  "peerDependencies": {
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
+}
