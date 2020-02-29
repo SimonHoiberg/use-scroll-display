@@ -1,6 +1,6 @@
 {
   "name": "use-scroll-display",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Slim React Hook for showing elements on scroll as they enter the viewport",
   "main": "dist/index.js",
   "files": [

@@ -79,7 +79,7 @@ const useScrollDisplay = (offset = 200) => {
     }
   };
 
-  return ref;
+  return [ref, showElement];
 };
 
 export default useScrollDisplay;

@@ -12,12 +12,17 @@ yarn add use-scroll-display
 ```
 
 ## Usage
+
+### Basic usage
 ```jsx
 import React from 'react';
 import useScrollDisplay from 'use-scroll-display';
 
 const App = () => {
-   const displayRef = useScrollDisplay();
+   const [displayRef, hasDisplayed] = useScrollDisplay();
+
+   // true if element has been displayed, false otherwise
+   console.log(hasDisplayed);
 
    return (
       <div ref={displayRef}>
@@ -27,11 +32,13 @@ const App = () => {
 }
 ```
 
+### Custom offset
+
 You can set the offset by passing a parameter.  
 It defaults to `200`
 
 ```javascript
-const displayRef = useScrollDisplay(350);
+const [displayRef] = useScrollDisplay(350);
 ```
 
 ## Styles and animations
